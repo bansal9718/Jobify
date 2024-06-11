@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import User from "./UserModel.js";
 import { JOB_STATUS } from "../utils/constants.js";
 import { JOB_TYPE } from "../utils/constants.js";
 

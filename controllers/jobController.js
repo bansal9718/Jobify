@@ -1,5 +1,4 @@
-import Job from "../models/JobModel.js";
-import User from "../models/UserModel.js";
+import Job from "../models/jobModel.js";
 import StatusCodes from "http-status-codes";
 import mongoose from "mongoose";
 import day from "dayjs";
