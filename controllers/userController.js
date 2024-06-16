@@ -30,24 +30,20 @@ export const ShowUsers = async (req, res) => {
   }
 };
 
-export const UpdateUser = async (req, res) => {
-  // console.log(req.file);
+export const updateUser = async (req, res) => {
   const newUser = { ...req.body };
-
   delete newUser.password;
-
   if (req.file) {
     const file = formatImage(req.file);
     // console.log(file);
-
     const response = await cloudinary.v2.uploader.upload(file);
     newUser.avatar = response.secure_url;
     newUser.avatarPublicId = response.public_id;
   }
-
   const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser);
+
   if (req.file && updatedUser.avatarPublicId) {
     await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId);
   }
-  res.status(StatusCodes.OK).json({ msg: "user updated" });
+  res.status(StatusCodes.OK).json({ msg: "update user" });
 };

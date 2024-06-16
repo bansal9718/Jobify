@@ -7,6 +7,8 @@ import cloudinary from "cloudinary";
 import mongoose from "mongoose";
 import "express-async-errors";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
+import mongoSanitize from "express-mongo-sanitize";
 
 //routers
 import JobRouter from "./routes/jobRouter.js";
@@ -25,6 +27,8 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
+app.use(helmet());
+app.use(mongoSanitize());
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,

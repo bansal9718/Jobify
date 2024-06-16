@@ -6270,11 +6270,9 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
 
   return (
     <Wrapper>
-      ...
       <div className="dashboard-page">
         {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
       </div>
-      ...
     </Wrapper>
   );
 };
