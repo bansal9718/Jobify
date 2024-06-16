@@ -27,7 +27,16 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+      },
+    },
+  })
+);
 app.use(mongoSanitize());
 
 cloudinary.config({
