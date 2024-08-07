@@ -5,26 +5,30 @@ import Logo from "../components/Logo";
 const Landing = () => {
   return (
     <Wrapper>
-      <nav>
+      <nav style={{ paddingRight: "1900px" }}>
         <Logo />
       </nav>
       <div className="container-page">
         <div className="info">
           <h1>
-            job <span>tracking</span> app
+            Job <span>tracking</span> app
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque a
-            enim qui ut, consequatur fugiat distinctio totam sapiente saepe
-            ipsum nemo maxime, eaque porro commodi? Delectus sequi porro dolor
-            fugit.
+          <p style={{ fontWeight: "bold" }}>
+            The Job Tracker App is a comprehensive and user-friendly tool
+            designed to help individuals manage their job search process
+            efficiently. Whether you're actively seeking new opportunities or
+            simply keeping an eye on potential career moves, this app provides
+            all the necessary features to organize, track, and optimize your job
+            search activities.
           </p>
-          <Link to="/register" className="btn register-link">
-            Register
-          </Link>
-          <Link to="/login" className="btn">
-            Login / Demo user
-          </Link>
+          <div>
+            <Link to="/register" className="btn register-link">
+              Register
+            </Link>
+            <Link to="/login" className="btn">
+              Login / Demo user
+            </Link>
+          </div>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
       </div>
