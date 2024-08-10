@@ -10,8 +10,7 @@ import Submitbtn from "../components/Submitbtn";
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  // console.log(data);
-
+  
   try {
     await customFetch.post("/jobs", data);
     toast.success("Job created successfully");
