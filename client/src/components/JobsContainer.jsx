@@ -5,9 +5,8 @@ import PageBtnContainer from "./PageBtnContainer";
 
 export const JobsContainer = () => {
   const { data } = useAllJobsContext();
+  // console.log(data);
   const { jobs, totalJobs, numOfPages } = data;
-  // console.log(numOfPages);
-
   if (jobs.length === 0) {
     return (
       <Wrapper>

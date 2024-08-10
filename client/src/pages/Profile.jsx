@@ -8,7 +8,6 @@ export const action = async ({ request }) => {
   const formData = await request.formData();
 
   const file = formData.get("avatar");
-  // console.log(file);
   if (file && file.size > 500000) {
     toast.error("image size too large");
     return null;

@@ -11,17 +11,14 @@ const PageBtnContainer = () => {
   const pages = Array.from({ length: numOfPages }, (_, index) => {
     return index + 1;
   });
-  //   console.log(pages);
 
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
-  //   console.log(search);
-  //   console.log(pathname);
+
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
-    // console.log(search);
+
     searchParams.set("page", pageNumber);
-    // console.log(searchParams);
     navigate(`${pathname}?${searchParams.toString()}`);
   };
 
@@ -115,18 +112,6 @@ const PageBtnContainer = () => {
         prev
       </button>
       {renderPageButtons()}
-      {/* {pages.map((pageNumber) => {
-        return (
-          <button
-            type="submit"
-            className={`btn page-btn ${pageNumber === currentPage && "active"}`}
-            key={pageNumber}
-            onClick={() => handlePageChange(pageNumber)}
-          >
-            {pageNumber}
-          </button>
-        );
-      })} */}
 
       <div className="btn-container">
         <button

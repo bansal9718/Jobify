@@ -8,11 +8,9 @@ import customFetch from "../utils/customFetch";
 import Submitbtn from "../components/Submitbtn";
 
 export const loader = async ({ params }) => {
-  // console.log(params);
   try {
     const { data } = await customFetch.get(`/jobs/${params.id}`);
-    // console.log(data);
-    // toast.success("Job Modified Successfully");
+   
     return data;
   } catch (error) {
     toast.error(error?.response?.data?.msg);
@@ -35,7 +33,6 @@ export const action = async ({ request, params }) => {
 
 const EditJob = () => {
   const { job } = useLoaderData();
-  // console.log(job);
 
   return (
     <Wrapper>

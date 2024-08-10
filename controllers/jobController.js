@@ -5,7 +5,6 @@ import day from "dayjs";
 
 //GET ALL JOBS
 export const getAllJobs = async (req, res) => {
-  // console.log(req.query);
   const { search, jobStatus, jobType, sort } = req.query;
 
   const queryObject = {

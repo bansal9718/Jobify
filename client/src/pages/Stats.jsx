@@ -1,7 +1,6 @@
 import ChartsContainer from "../components/ChartsContainer";
 import StatsContainer from "../components/StatsContainer";
 import customFetch from "../utils/customFetch";
-import { useLoaderData } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const statsQuery = {
@@ -17,14 +16,12 @@ export const loader = (queryClient) => async () => {
 };
 
 const stats = () => {
-  // const { defaultStats, monthlyApplications } = useLoaderData();
-  // console.log(monthlyApplications);
+  
 
   const { data } = useQuery(statsQuery);
 
   const { defaultStats, monthlyApplications } = data;
 
-  // return <h1>react query </h1>;
 
   return (
     <>

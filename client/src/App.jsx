@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import { useRouteError } from "react-router-dom";
 import ErrorElement from "./components/ErrorElement";
 import {
   HomeLayout,
@@ -46,7 +45,6 @@ const queryClient = new QueryClient({
   },
 });
 
-// console.log(queryClient);
 const router = createBrowserRouter([
   {
     path: "/",

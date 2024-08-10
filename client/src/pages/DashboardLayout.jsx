@@ -16,12 +16,6 @@ import BigSideBar from "../components/BigSideBar";
 import { checkDefaultTheme } from "../App";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-import { MdOutlineAirlineSeatLegroomReduced } from "react-icons/md";
 
 const DashboardContext = createContext();
 
@@ -34,7 +28,7 @@ export const loader = async () => {
     return redirect("/");
   }
 };
-const DashboardLayout = ({ isDarkThemeEnabled }) => {
+const DashboardLayout = () => {
   const { user } = useLoaderData();
   const navigate = useNavigate();
   const navigation = useNavigation();

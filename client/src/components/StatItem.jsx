@@ -1,4 +1,3 @@
-import { Link, useNavigate } from "react-router-dom";
 import Wrapper from "../assets/wrappers/StatItem";
 const StatItem = ({ count, title, icon, color, bcg, onClick }) => {
  

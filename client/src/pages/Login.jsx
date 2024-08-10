@@ -21,7 +21,6 @@ export const action = async ({ request }) => {
     return errors;
   }
 
-  // console.log(data);
 
   try {
     await customFetch.post("/auth/login", data);
